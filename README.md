@@ -14,7 +14,7 @@ Local web tool for password generation. Written in Python, using Flask and Nginx
 
 ## Installation
 
-The preferred installation for **pwgen.lan** is via Docker. An exampe-compose.yml is contained within this repo.
+The preferred installation for **pwgen.lan** is via Docker. An exampe compose.yml is contained within this repo.
 
 ## How to Use
 
