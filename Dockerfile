@@ -13,10 +13,13 @@ RUN git clone https://github.com/kammererN/pwgen.lan.git
 WORKDIR /pwgen.lan
 
 # Clone env
-RUN pip install -r 'requirements.txt' 
+RUN pip install -r 'requirements.txt' --break-system 
 
 # Expose port 5000
 EXPOSE 5000
 
+# CD to
+WORKDIR ./app
+
 # Call Gunicorn
-CMD ["gunicorn", "-w", "4", "'app:app'"]
+CMD ["gunicorn", "-w", "4", "app:app", "--bind", "0.0.0.0:8000"]
