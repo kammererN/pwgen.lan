@@ -19,5 +19,8 @@ RUN source ./venv/bin/activate
 # Clone venv
 RUN pip install -r 'requirements.txt' 
 
+# Expose port 5000
+EXPOSE 5000
+
 # Call Gunicorn
 CMD ["gunicorn", "-w", "4", "'app:app'"]
