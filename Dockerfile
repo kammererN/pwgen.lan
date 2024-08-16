@@ -1,8 +1,10 @@
-#
-# Docker image for pwgen.lan
-#
-# Clone debian image
+
+# Clone Debian
 FROM debian
+
+# Install git and python3
+RUN apt update
+RUN apt install -y git python3 python3-pip
 
 # Clone git repository
 RUN git clone https://github.com/kammererN/pwgen.lan.git
@@ -10,13 +12,7 @@ RUN git clone https://github.com/kammererN/pwgen.lan.git
 # Switch to app folder
 WORKDIR /pwgen.lan
 
-# Create venv
-RUN python3 -m venv venv
-
-# Activate venv
-RUN source ./venv/bin/activate
-
-# Clone venv
+# Clone env
 RUN pip install -r 'requirements.txt' 
 
 # Expose port 5000
