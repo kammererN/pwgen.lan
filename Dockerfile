@@ -2,9 +2,9 @@
 # Clone Debian
 FROM debian
 
-# Install git and python3
+# Install git, python3 & pwgen
 RUN apt update
-RUN apt install -y git python3 python3-pip
+RUN apt install -y git python3 python3-pip pwgen
 
 # Clone git repository
 RUN git clone https://github.com/kammererN/pwgen.lan.git
