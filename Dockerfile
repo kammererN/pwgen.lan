@@ -1,13 +1,23 @@
+#
+# Docker image for pwgen.lan
+#
 # Clone debian image
 FROM debian
 
-# Switch to /app folder
-WORKDIR /app
-
 # Clone git repository
+RUN git clone https://github.com/kammererN/pwgen.lan.git
 
-# Create virtualenv
-# Clone virtualenv
-# Activate virtualenv
+# Switch to app folder
+WORKDIR /pwgen.lan
+
+# Create venv
+RUN python3 -m venv venv
+
+# Activate venv
+RUN source ./venv/bin/activate
+
+# Clone venv
+RUN pip install -r 'requirements.txt' 
+
 # Call Gunicorn
-# Done?
+CMD ["gunicorn", "-w", "4", "'app:app'"]
