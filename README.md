@@ -18,9 +18,9 @@ The preferred installation for **pwgen.lan** is via Docker. An exampe compose.ym
 
 ## How to Use
 
-Simply access the URL of the container, and a password will be generated in plain html.
+Simply access the ```URL``` of the container, and a password will be generated in plain html.
 
-Access URL/raw for a raw text password.
+Access ```URL/raw``` for a raw text password.
 
 ## Author
 
